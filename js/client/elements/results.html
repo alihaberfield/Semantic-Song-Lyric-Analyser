@@ -1,0 +1,18 @@
+<dom-module id="marklogic-results">
+   <template>
+   <chart-bar
+       width="400"
+       height="200"
+       labels='{{columns}}'
+       values="{{rows}}"
+       options='{"animationSteps":2}'
+       colors='[ ["253,180,92"],["247,70,74"],["70,191,189"],["148,159,177"] ]'>
+   </chart-bar>
+
+   <uservices-method service-name="play" method-name="getPossibleAnswers" args="[]" result="{{answers}}"></uservices-inject>
+   <uservices-method service-name="results" method-name="getResults" args="[]" result="{{results}}"></uservices-inject>
+   <uservices-event service-name="results" method-name="updateResults" args="[]" result="{{resultUpdates}}"></uservices-inject>
+   </template>
+</dom-module>
+
+<script type="text/javascript" src="results.js"></script>

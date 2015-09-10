@@ -1,0 +1,50 @@
+{
+  "name": "uservices-socket.io-client-polymer",
+  "authors": [
+    "Christy Haragan <christy@christy.haragan@gmail.com>"
+  ],
+  "description": "A polymer custom element to easily consume remote proxies of uServices via socket.io",
+  "main": [
+    "elements/event.html",
+    "elements/event.js",
+    "elements/method.html",
+    "elements/method.js"
+  ],
+  "keywords": [
+    "service",
+    "portable",
+    "asynchronous",
+    "observable",
+    "actor",
+    "micro",
+    "socket.io",
+    "client",
+    "polymer",
+    "webcomponents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "christyharagan/uservices-socket.io-client-polymer"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.0.0"
+  },
+  "homepage": "https://github.com/christyharagan/uservices-socket.io-client-polymer",
+  "_release": "c96e83082d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c96e83082d674e639e668cc9e7c07e58a488573a"
+  },
+  "_source": "git://github.com/christyharagan/uservices-socket.io-client-polymer.git",
+  "_target": "*",
+  "_originalSource": "uservices-socket.io-client-polymer"
+}

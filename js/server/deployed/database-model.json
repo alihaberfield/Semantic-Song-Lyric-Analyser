@@ -1,0 +1,162 @@
+{
+  "databases": {
+    "ml-nordic-demo-content": {
+      "name": "ml-nordic-demo-content",
+      "triples": true,
+      "defaultRulesets": [
+        "/rules/logic.rules"
+      ],
+      "forests": [
+        {
+          "name": "ml-nordic-demo-content",
+          "database": "ml-nordic-demo-content",
+          "host": "alis-dev-machine.local"
+        }
+      ],
+      "schemaDatabase": "ml-nordic-demo-schema",
+      "triggersDatabase": "ml-nordic-demo-triggers"
+    },
+    "ml-nordic-demo-triggers": {
+      "name": "ml-nordic-demo-triggers",
+      "forests": [
+        {
+          "name": "ml-nordic-demo-triggers",
+          "database": "ml-nordic-demo-triggers",
+          "host": "alis-dev-machine.local"
+        }
+      ]
+    },
+    "ml-nordic-demo-modules": {
+      "name": "ml-nordic-demo-modules",
+      "forests": [
+        {
+          "name": "ml-nordic-demo-modules",
+          "database": "ml-nordic-demo-modules",
+          "host": "alis-dev-machine.local"
+        }
+      ]
+    },
+    "ml-nordic-demo-schema": {
+      "name": "ml-nordic-demo-schema",
+      "forests": [
+        {
+          "name": "ml-nordic-demo-schema",
+          "database": "ml-nordic-demo-schema",
+          "host": "alis-dev-machine.local"
+        }
+      ]
+    }
+  },
+  "servers": {
+    "ml-nordic-demo": {
+      "name": "ml-nordic-demo",
+      "host": "alis-dev-machine.local",
+      "port": 8008,
+      "group": "Default",
+      "modulesDatabase": "ml-nordic-demo-modules",
+      "contentDatabase": "ml-nordic-demo-content"
+    }
+  },
+  "ruleSets": [
+    {
+      "path": "/rules/logic.rules",
+      "rules": "PREFIX l: <http://logic/>\n\nrule \"negationTa\" CONSTRUCT {\n  ?b l:is l:false\n}{\n  ?a l:is l:true .\n  ?a l:not ?b\n}\nrule \"negationTb\" CONSTRUCT {\n  ?a l:is l:false\n}{\n  ?b l:is l:true .\n  ?a l:not ?b\n}\nrule \"negationFa\" CONSTRUCT {\n  ?b l:is l:true\n}{\n  ?a l:is l:false .\n  ?a l:not ?b\n}\nrule \"negationFb\" CONSTRUCT {\n  ?a l:is l:true\n}{\n  ?b l:is l:false .\n  ?a l:not ?b\n}\nrule \"conjunction\" CONSTRUCT {\n  ?a l:is l:true\n}{\n  ?ab l:is l:true .\n  ?ab l:and ?a\n}\nrule \"disjunction\" CONSTRUCT {\n  ?a l:is l:false\n}{\n  ?ab l:is l:false .\n  ?ab l:or ?a\n}\nrule \"modusPollens\" CONSTRUCT {\n  ?b l:is l:true\n}{\n  ?ab l:is l:true .\n  ?ab l:leftImplies ?a .\n  ?ab l:rightImplies ?b .\n  ?a l:is l:true\n}\nrule \"modusTollens\" CONSTRUCT {\n  ?a l:is l:false\n}{\n  ?ab l:is l:true .\n  ?ab l:leftImplies ?a .\n  ?ab l:rightImplies ?b .\n  ?b l:is l:false\n}\nrule \"conjunctiveSyllogism\" CONSTRUCT {\n  ?b l:is l:false\n}{\n  ?ab l:is l:false .\n  ?ab l:and ?a .\n  ?ab l:and ?b .\n  ?a l:is l:true\n}\nrule \"disjunctiveSyllogism\" CONSTRUCT {\n  ?b l:is l:true\n}{\n  ?ab l:is l:true .\n  ?ab l:or ?a .\n  ?ab l:or ?b .\n  ?a l:is l:false\n}"
+    },
+    {
+      "path": "/rules/logic.rules",
+      "rules": "PREFIX l: <http://logic/>\n\nrule \"negationTa\" CONSTRUCT {\n  ?b l:is l:false\n}{\n  ?a l:is l:true .\n  ?a l:not ?b\n}\nrule \"negationTb\" CONSTRUCT {\n  ?a l:is l:false\n}{\n  ?b l:is l:true .\n  ?a l:not ?b\n}\nrule \"negationFa\" CONSTRUCT {\n  ?b l:is l:true\n}{\n  ?a l:is l:false .\n  ?a l:not ?b\n}\nrule \"negationFb\" CONSTRUCT {\n  ?a l:is l:true\n}{\n  ?b l:is l:false .\n  ?a l:not ?b\n}\nrule \"conjunction\" CONSTRUCT {\n  ?a l:is l:true\n}{\n  ?ab l:is l:true .\n  ?ab l:and ?a\n}\nrule \"disjunction\" CONSTRUCT {\n  ?a l:is l:false\n}{\n  ?ab l:is l:false .\n  ?ab l:or ?a\n}\nrule \"modusPollens\" CONSTRUCT {\n  ?b l:is l:true\n}{\n  ?ab l:is l:true .\n  ?ab l:leftImplies ?a .\n  ?ab l:rightImplies ?b .\n  ?a l:is l:true\n}\nrule \"modusTollens\" CONSTRUCT {\n  ?a l:is l:false\n}{\n  ?ab l:is l:true .\n  ?ab l:leftImplies ?a .\n  ?ab l:rightImplies ?b .\n  ?b l:is l:false\n}\nrule \"conjunctiveSyllogism\" CONSTRUCT {\n  ?b l:is l:false\n}{\n  ?ab l:is l:false .\n  ?ab l:and ?a .\n  ?ab l:and ?b .\n  ?a l:is l:true\n}\nrule \"disjunctiveSyllogism\" CONSTRUCT {\n  ?b l:is l:true\n}{\n  ?ab l:is l:true .\n  ?ab l:or ?a .\n  ?ab l:or ?b .\n  ?a l:is l:false\n}"
+    }
+  ],
+  "modules": {
+    "/ml-nordic-demo-server/lib/databaseModel": {
+      "name": "/ml-nordic-demo-server/lib/databaseModel",
+      "code": ""
+    },
+    "/ml-nordic-demo-server/lib/logicRuleSet": {
+      "name": "/ml-nordic-demo-server/lib/logicRuleSet",
+      "code": ""
+    },
+    "/ml-nordic-demo-server/lib/models/statement": {
+      "name": "/ml-nordic-demo-server/lib/models/statement",
+      "code": ""
+    },
+    "/ml-nordic-demo-server/lib/services/playService": {
+      "name": "/ml-nordic-demo-server/lib/services/playService",
+      "code": ""
+    },
+    "/ml-nordic-demo-server/lib/services/preperationService": {
+      "name": "/ml-nordic-demo-server/lib/services/preperationService",
+      "code": ""
+    },
+    "/ml-nordic-demo-server/lib/services/resultsService": {
+      "name": "/ml-nordic-demo-server/lib/services/resultsService",
+      "code": ""
+    },
+    "markscript-uservices": {
+      "name": "markscript-uservices",
+      "code": ""
+    },
+    "/_alerts/ml-nordic-demo-server/lib/services/resultsService/ResultsService/updateResults": {
+      "name": "/_alerts/ml-nordic-demo-server/lib/services/resultsService/ResultsService/updateResults",
+      "code": ""
+    },
+    "markscript-core": {
+      "name": "markscript-core",
+      "code": ""
+    },
+    "speckle": {
+      "name": "speckle",
+      "code": ""
+    }
+  },
+  "extensions": {
+    "play-getPremises": {
+      "name": "play-getPremises",
+      "code": ""
+    },
+    "play-getPossibleAnswers": {
+      "name": "play-getPossibleAnswers",
+      "code": ""
+    },
+    "play-findValue": {
+      "name": "play-findValue",
+      "code": ""
+    },
+    "play-submitAnswer": {
+      "name": "play-submitAnswer",
+      "code": ""
+    },
+    "preperation-clear": {
+      "name": "preperation-clear",
+      "code": ""
+    },
+    "preperation-loadAnswers": {
+      "name": "preperation-loadAnswers",
+      "code": ""
+    },
+    "preperation-loadPremises": {
+      "name": "preperation-loadPremises",
+      "code": ""
+    },
+    "results-getResults": {
+      "name": "results-getResults",
+      "code": ""
+    }
+  },
+  "tasks": {},
+  "alerts": {
+    "results-updateResults": {
+      "name": "results-updateResults",
+      "scope": "/guesses/",
+      "states": [
+        0,
+        1
+      ],
+      "actionModule": "/_alerts/ml-nordic-demo-server/lib/services/resultsService/ResultsService/updateResults"
+    }
+  },
+  "contentDatabase": "ml-nordic-demo-content",
+  "modulesDatabase": "ml-nordic-demo-modules",
+  "schemaDatabase": "ml-nordic-demo-schema",
+  "triggersDatabase": "ml-nordic-demo-triggers"
+}

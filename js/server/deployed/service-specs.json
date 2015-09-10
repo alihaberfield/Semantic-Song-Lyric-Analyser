@@ -1,0 +1,57 @@
+{
+  "play": {
+    "implementation": {
+      "moduleName": "./lib/services/playService",
+      "className": "PlayService"
+    },
+    "methods": {
+      "getPremises": {
+        "method": 0
+      },
+      "getPossibleAnswers": {
+        "method": 0
+      },
+      "findValue": {
+        "method": 0
+      },
+      "submitAnswer": {
+        "method": 1
+      }
+    },
+    "events": {}
+  },
+  "preperation": {
+    "implementation": {
+      "moduleName": "./lib/services/preperationService",
+      "className": "PreperationService"
+    },
+    "methods": {
+      "clear": {
+        "method": 1
+      },
+      "loadAnswers": {
+        "method": 1
+      },
+      "loadPremises": {
+        "method": 1
+      }
+    },
+    "events": {}
+  },
+  "results": {
+    "implementation": {
+      "moduleName": "./lib/services/resultsService",
+      "className": "ResultsService"
+    },
+    "methods": {
+      "getResults": {
+        "method": 0
+      }
+    },
+    "events": {
+      "updateResults": {
+        "scope": "/guesses/"
+      }
+    }
+  }
+}
