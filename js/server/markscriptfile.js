@@ -8,7 +8,7 @@ var loadData = require('./example/loadData').loadData
 var COMMON = {
   appName: 'ml-nordic-entry',
   ml: {
-    port: 8008,
+    port: 8009,
     host: 'alis-dev-machine.local',
     user: 'admin',
     password: 'admin'
