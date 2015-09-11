@@ -57,18 +57,7 @@ Polymer({
   },
   onPremises: function() {
     function formatStatement(statement) {
-      switch (statement.kind) {
-        case StatementKind.PROPOSITION:
-          return statement.proposition
-        case StatementKind.NEGATION:
-          return '! (' + formatStatement(statement.a) + ')'
-        case StatementKind.AND:
-          return formatStatement(statement.a) + ' & ' + formatStatement(statement.b)
-        case StatementKind.OR:
-          return formatStatement(statement.a) + ' | ' + formatStatement(statement.b)
-        case StatementKind.IMPLIES:
-          return formatStatement(statement.a) + ' => ' + formatStatement(statement.b)
-      }
+      return "Never gonna " + statement.a.proposition;
     }
 
     this.notifyPath('formattedPremises', this.premises.map(formatStatement))

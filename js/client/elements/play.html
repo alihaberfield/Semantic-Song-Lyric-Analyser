@@ -6,7 +6,7 @@
 
     <paper-header-panel class="flex">
       <paper-toolbar>
-        <div>Given these statements</div>
+        <div>Given these statements:</div>
       </paper-toolbar>
     </paper-header-panel>
 
@@ -16,6 +16,10 @@
       </template>
     </div>
 
+    <template is="dom-repeat" items="{{guess}}">
+      Guess made! {{item}}
+    </template>
+
     <paper-dropdown-menu selected-item={{selectedAnswer}} label="Which of these follows?">
       <paper-menu class="dropdown-content">
         <template is="dom-repeat" items="{{formattedAnswers}}">
@@ -24,14 +28,17 @@
       </paper-menu>
     </paper-dropdown-menu>
 
-    <paper-button disabled="{{hasAnswered}}" on-click="submit" raised>Submit</paper-button>
+    <paper-button on-click="submit" raised>Submit</paper-button>
 
+    <div>
     <template is="dom-if" if="{{answeredCorrectly}}">
       Congratulations. You choose the correct answer.
     </template>
     <template is="dom-if" if="{{answeredIncorrectly}}">
       Bad luck. You choose the wrong answer.
     </template>
+    </div>
+
   </template>
 </dom-module>
 
