@@ -13,9 +13,6 @@ exports.answers = [
   {
     id: 2,
     values: [{
-      symbol: 'tell a lie'
-      //value: true
-    }, {
       symbol: 'desert you'
       //value: true
     }]
@@ -49,9 +46,6 @@ exports.premises = [
     kind: 'abandon',
     a: {
       proposition: 'run around'
-    },
-    b: {
-      proposition: 'desert you'
     }
   }
 ]

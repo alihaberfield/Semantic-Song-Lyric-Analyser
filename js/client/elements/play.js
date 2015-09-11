@@ -65,8 +65,10 @@ Polymer({
   onIsCorrect: function() {
     if (this.isCorrect) {
       this.notifyPath('answeredCorrectly', true)
+      this.notifyPath('answeredIncorrectly', false)
     } else {
       this.notifyPath('answeredIncorrectly', true)
+      this.notifyPath('answeredCorrectly', false)
     }
   },
   submit: function() {

@@ -21,7 +21,11 @@ export class PlayService {
 
     let guess = cts.doc('/answers/' + answerId).root.toObject()
 
-    return resolve(true)
+    if (answerId == 2) {
+      return resolve(true)
+    } else {
+      return resolve(false)
+    }
   }
 
   _findValue(symbol) {
