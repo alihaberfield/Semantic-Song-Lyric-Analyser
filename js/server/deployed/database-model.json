@@ -1,60 +1,60 @@
 {
   "databases": {
-    "ml-nordic-demo-content": {
-      "name": "ml-nordic-demo-content",
+    "ml-nordic-entry-content": {
+      "name": "ml-nordic-entry-content",
       "triples": true,
       "defaultRulesets": [
         "/rules/logic.rules"
       ],
       "forests": [
         {
-          "name": "ml-nordic-demo-content",
-          "database": "ml-nordic-demo-content",
+          "name": "ml-nordic-entry-content",
+          "database": "ml-nordic-entry-content",
           "host": "alis-dev-machine.local"
         }
       ],
-      "schemaDatabase": "ml-nordic-demo-schema",
-      "triggersDatabase": "ml-nordic-demo-triggers"
+      "schemaDatabase": "ml-nordic-entry-schema",
+      "triggersDatabase": "ml-nordic-entry-triggers"
     },
-    "ml-nordic-demo-triggers": {
-      "name": "ml-nordic-demo-triggers",
+    "ml-nordic-entry-triggers": {
+      "name": "ml-nordic-entry-triggers",
       "forests": [
         {
-          "name": "ml-nordic-demo-triggers",
-          "database": "ml-nordic-demo-triggers",
+          "name": "ml-nordic-entry-triggers",
+          "database": "ml-nordic-entry-triggers",
           "host": "alis-dev-machine.local"
         }
       ]
     },
-    "ml-nordic-demo-modules": {
-      "name": "ml-nordic-demo-modules",
+    "ml-nordic-entry-modules": {
+      "name": "ml-nordic-entry-modules",
       "forests": [
         {
-          "name": "ml-nordic-demo-modules",
-          "database": "ml-nordic-demo-modules",
+          "name": "ml-nordic-entry-modules",
+          "database": "ml-nordic-entry-modules",
           "host": "alis-dev-machine.local"
         }
       ]
     },
-    "ml-nordic-demo-schema": {
-      "name": "ml-nordic-demo-schema",
+    "ml-nordic-entry-schema": {
+      "name": "ml-nordic-entry-schema",
       "forests": [
         {
-          "name": "ml-nordic-demo-schema",
-          "database": "ml-nordic-demo-schema",
+          "name": "ml-nordic-entry-schema",
+          "database": "ml-nordic-entry-schema",
           "host": "alis-dev-machine.local"
         }
       ]
     }
   },
   "servers": {
-    "ml-nordic-demo": {
-      "name": "ml-nordic-demo",
+    "ml-nordic-entry": {
+      "name": "ml-nordic-entry",
       "host": "alis-dev-machine.local",
-      "port": 8008,
+      "port": 8009,
       "group": "Default",
-      "modulesDatabase": "ml-nordic-demo-modules",
-      "contentDatabase": "ml-nordic-demo-content"
+      "modulesDatabase": "ml-nordic-entry-modules",
+      "contentDatabase": "ml-nordic-entry-content"
     }
   },
   "ruleSets": [
@@ -155,8 +155,8 @@
       "actionModule": "/_alerts/ml-nordic-demo-server/lib/services/resultsService/ResultsService/updateResults"
     }
   },
-  "contentDatabase": "ml-nordic-demo-content",
-  "modulesDatabase": "ml-nordic-demo-modules",
-  "schemaDatabase": "ml-nordic-demo-schema",
-  "triggersDatabase": "ml-nordic-demo-triggers"
+  "contentDatabase": "ml-nordic-entry-content",
+  "modulesDatabase": "ml-nordic-entry-modules",
+  "schemaDatabase": "ml-nordic-entry-schema",
+  "triggersDatabase": "ml-nordic-entry-triggers"
 }

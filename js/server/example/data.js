@@ -1,89 +1,57 @@
-var StatementKind = require('../lib/models/statement').StatementKind
+//var StatementKind = require('../lib/models/statement').StatementKind
 
 exports.answers = [
   {
     id: 1,
     values: [{
-      symbol: 'R',
-      value: false
+      symbol: 'tell a lie'
+      //value: false
     }, {
-        symbol: 'S',
-        value: false
-      }]
+      symbol: 'hurt you'
+    }]
   },
   {
     id: 2,
     values: [{
-      symbol: 'R',
-      value: true
+      symbol: 'tell a lie'
+      //value: true
     }, {
-        symbol: 'S',
-        value: false
-      }]
+      symbol: 'desert you'
+      //value: true
+    }]
   },
   {
     id: 3,
     values: [{
-      symbol: 'R',
-      value: false
-    }, {
-        symbol: 'S',
-        value: true
-      }]
-  },
-  {
-    id: 4,
-    values: [{
-      symbol: 'R',
-      value: true
-    }, {
-        symbol: 'S',
-        value: true
-      }]
+      symbol: 'make you cry'
+     // value: false
+    },{
+      symbol: 'say goodbye'
+     // value: false
+    }]
   }
 ]
 
 exports.premises = [
   {
-    kind: StatementKind.AND,
+    kind: 'cease',
     a: {
-      kind: StatementKind.PROPOSITION,
-      proposition: 'P'
-    },
-    b: {
-      kind: StatementKind.PROPOSITION,
-      proposition: 'Q'
+      proposition: 'give you up'
     }
   },
   {
-    kind: StatementKind.IMPLIES,
+    kind: 'disappoint',
     a: {
-      kind: StatementKind.PROPOSITION,
-      proposition: 'S'
-    },
-    b: {
-      kind: StatementKind.PROPOSITION,
-      proposition: 'R'
+      proposition: 'let you down'
     }
-  }, {
-    kind: StatementKind.IMPLIES,
+  }, 
+  {
+    kind: 'abandon',
     a: {
-      kind: StatementKind.PROPOSITION,
-      proposition: 'P'
+      proposition: 'run around'
     },
     b: {
-      kind: StatementKind.NEGATION,
-      a: {
-        kind: StatementKind.AND,
-        a: {
-          kind: StatementKind.PROPOSITION,
-          proposition: 'R'
-        },
-        b: {
-          kind: StatementKind.PROPOSITION,
-          proposition: 'Q'
-        }
-      }
+      proposition: 'desert you'
     }
   }
 ]
